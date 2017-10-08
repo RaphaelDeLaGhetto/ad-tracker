@@ -45,7 +45,12 @@ Currently an ad consists of JSON with `destination`, `imageLg`, and `imageSm` ke
 From the `redis-cli`:
 
 ```
-redis:6379> lpush ads '{"destination":"https://isthisdank.com","imageLg":"http://localhost:3001/ads/dank_lg.jpg","imageSm":"http://localhost:3001/ads/dank_sm.jpg"}' 
+redis:6379> lpush ads '{"destination":"https://isthisdank.com","imageLg":"/images/isthisdank-leaderboard.jpg","imageSm":"/images/isthisdank-mobile-leaderboard.jpg"}' 
 ```
 
+## View click logs
+
+```
+redis:6379> lrange log:https://isthisdank.com 0 -1
+```
 
