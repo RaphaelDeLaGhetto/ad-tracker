@@ -48,8 +48,12 @@ describe('ad script', () => {
   it('retrieves ad details from the queue and renders it on the page', (done) => {
     browser.on('loaded', (doc) => {
       document = doc;
-      console.log(browser.html());
-      done();
+
+      document.addEventListener('ad-tracker-done', function listener(e) {
+        e.target.removeEventListener(e.type, listener);
+        browser.assert.element('.ad-tracker a[href="https://isthisdank.com"] img[src="http://localhost:3001/ads/dank_lg.jpg"]' );
+        done();
+      });
     });
 
     browser.visit('/test.html', (err) => {

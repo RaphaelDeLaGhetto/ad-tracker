@@ -63,7 +63,6 @@ app.get('/next', (req, res, next) => {
     if (err) {
       return res.status(500).json({ error: err });
     }
-    console.log('RESULTS', result);
     if (!result) result = JSON.stringify({});
     res.send(result);
   });
