@@ -6,7 +6,7 @@
   }).then(function(json) {
     if (Object.keys(json).length > 0) {
       var anchor = document.createElement('a');
-      anchor.setAttribute('href', json.destination);
+      anchor.setAttribute('href', `${AD_SERVER}count?dest=${encodeURIComponent(json.destination)}`);
   
       var img = document.createElement('img');
       img.setAttribute('src', json.imageLg);

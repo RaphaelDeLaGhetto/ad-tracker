@@ -51,7 +51,7 @@ describe('ad script', () => {
 
       document.addEventListener('ad-tracker-done', function listener(e) {
         e.target.removeEventListener(e.type, listener);
-        browser.assert.element('.ad-tracker a[href="https://isthisdank.com"] img[src="http://localhost:3001/ads/dank_lg.jpg"]' );
+        browser.assert.element(`.ad-tracker a[href="/count?dest=${encodeURIComponent('https://isthisdank.com')}"] img[src="http://localhost:3001/ads/dank_lg.jpg"]`);
         done();
       });
     });
