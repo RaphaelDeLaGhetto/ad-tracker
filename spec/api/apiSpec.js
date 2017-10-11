@@ -2,7 +2,7 @@
                                
 const app = require('../../app');  
 const request = require('request');  
-const db = require('redis').createClient();
+const db = require('../../db/config');
       
 const PORT = process.env.NODE_ENV === 'production' ? 3000 : 3001; 
 

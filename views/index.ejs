@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Ad Tracker</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <% Object.keys(properties).forEach((property) => { %>
+      <article class="property">
+        <header>
+          <h1><%= property %></h1>
+        </header>
+        <section>
+          <% properties[property].forEach((click) => { %>
+            <span class='referer'>
+              <%= click.referer %>
+            </span>
+            <span class='ip'>
+              <%= click.ip %>
+            </span>
+            <span class='time'>
+              <%= click.time %>
+            </span>
+          <% }); %>
+        </section>
+      </article>
+
+    <% }); %>
   </body>
 </html>

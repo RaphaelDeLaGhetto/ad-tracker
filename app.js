@@ -13,19 +13,7 @@ const moment = require('moment');
 const app = express();
 
 // Database
-const redis = require('redis');
-
-let db;
-if (process.env.NODE_ENV === 'production') {
-  db = redis.createClient(6379, 'redis');
-}
-else {
-  db = redis.createClient();
-}
-db.on('error', (err) => {
-  console.error('Error ' + err);
-});
-
+const db = require('./db/config');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
