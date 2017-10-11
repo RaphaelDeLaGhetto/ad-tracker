@@ -1,8 +1,31 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
+
+article.property header h1 {
+  font-size: 2em;
+}
+
+.ip,
+.referer {
+  margin: 1em 1em 0 1em;
+  font-size: 1.5em;
+}
+
+.time {
+  display: block;
+  margin-left: 2em;
+}
+
+.click {
+  margin-bottom: 1em;
+}
+.click:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+

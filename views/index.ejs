@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Ad Tracker</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/styles/style.css' />
   </head>
   <body>
     <% Object.keys(properties).forEach((property) => { %>
@@ -12,19 +12,20 @@
         </header>
         <section>
           <% properties[property].forEach((click) => { %>
-            <span class='referer'>
-              <%= click.referer %>
-            </span>
-            <span class='ip'>
-              <%= click.ip %>
-            </span>
-            <span class='time'>
-              <%= click.time %>
-            </span>
+            <div class="click">
+              <span class="referer">
+                <%= click.referer %>
+              </span>
+              <span class="ip">
+                <%= click.ip %>
+              </span>
+              <span class="time">
+                <%= click.time %>
+              </span>
+            </div>
           <% }); %>
         </section>
       </article>
-
     <% }); %>
   </body>
 </html>
