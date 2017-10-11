@@ -15,10 +15,10 @@ npm install
 I'm a Docker fan. Set up a Redis container for development:
 
 ```
-docker run --name redis-dev -p 6379:6379 -d redis
+docker run --name redis-dev -p 6380:6379 -d redis
 ```
 
-There is no persistence for tests.
+There is no persistence for tests. The open port is set to `6380` so that data isn't accidently smoked if the tests are run in production.
 
 ## Jasmine
 
