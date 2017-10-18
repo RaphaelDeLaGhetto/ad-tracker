@@ -87,11 +87,14 @@ describe('ad tracker API', () => {
     let ad1, ad2;
     beforeEach((done) => {
       ad1 = JSON.stringify({ destination: 'https://isthisdank.com',
-                             imageLg: 'http://localhost:3001/ads/dank_lg.jpg',
-                             imageSm: 'http://localhost:3001/ads/dank_sm.jpg' });
+                             image: 'http://localhost:3001/images/isthisdank-leaderboard.jpg',
+                             width: 728,
+                             height: 90 });
       ad2 = JSON.stringify({ destination: 'https://recyclefreedom.com',
-                             imageLg: 'http://localhost:3001/ads/recycle_lg.jpg',
-                             imageSm: 'http://localhost:3001/ads/recycle_sm.jpg' });
+                             image: 'http://localhost:3001/ads/recycle_lg.jpg',
+                             width: 150,
+                             height: 150 });
+ 
       db.lpush('ads', [ad1, ad2], (err, results) => {
         if (err) {
           done.fail();
