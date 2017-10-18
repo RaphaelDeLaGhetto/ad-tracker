@@ -40,12 +40,12 @@ docker run -it --link redis-dev:redis --rm redis redis-cli -h redis -p 6379
 
 ## Add an advertisement
 
-Currently an ad consists of JSON with `destination`, `imageLg`, and `imageSm` key/value pairs.
+Currently an ad consists of JSON with `destination`, `image` URL, and `width`/`height` key/value pairs.
 
 From the `redis-cli`:
 
 ```
-redis:6379> lpush ads '{"destination":"https://isthisdank.com","imageLg":"/images/isthisdank-leaderboard.jpg","imageSm":"/images/isthisdank-mobile-leaderboard.jpg"}' 
+redis:6379> lpush ads '{"destination":"https://isthisdank.com","image":"/images/isthisdank-leaderboard.jpg","width":780,"height":90}' 
 ```
 
 ## View click logs
