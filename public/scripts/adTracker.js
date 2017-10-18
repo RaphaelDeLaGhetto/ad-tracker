@@ -2,7 +2,6 @@
   var PROXY_URL = '';
   var AD_SERVER = '/';
 
-  //fetch(AD_SERVER + 'next').then(function(response) {
   fetch(PROXY_URL + AD_SERVER + 'next').then(function(response) {
     return response.json();
   }).then(function(json) {
